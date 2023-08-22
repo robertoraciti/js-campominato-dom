@@ -34,6 +34,10 @@ footer {
   width: calc(100% / 7);
 }
 
-.selected-cell {
+.safe-cell {
   background-color: azure;
+}
+
+.bombs-cell {
+  background-color: red;
 }
