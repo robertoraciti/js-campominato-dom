@@ -15,6 +15,7 @@ const playButton = document.getElementById("play-button");
 const difficultySelect = document.getElementById("difficulty");
 const totalBombs = 16;
 let explodingBombs = [];
+let score = 0;
 
 function generatedBombs(totalBombs, min, max) {
   const bombs = [];
@@ -47,9 +48,12 @@ function generateGrid(container, i, cellsTotal) {
   cell.addEventListener("click", function () {
     if (explodingBombs.includes(i)) {
       cell.classList.add("bombs-cell");
-      alert("Hai perso");
+      alert("Sei esploso! Il tuo punteggio è: " + score);
+      score = 0;
+      cellsContainer.innerHTML = "";
     } else {
       cell.classList.add("safe-cell");
+      score++;
     }
     console.log(cell.innerText);
   });
